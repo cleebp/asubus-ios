@@ -1,0 +1,410 @@
+{
+    "assets": [
+        {
+            "asset": "../../../../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/ResourceRules.plist", 
+            "target": "ResourceRules.plist"
+        }, 
+        {
+            "asset": "AsUBus 0.2/en.lproj/InfoPlist.strings", 
+            "target": "en.lproj/InfoPlist.strings"
+        }, 
+        {
+            "asset": "AsUBus 0.2/en.lproj/MainStoryboard.storyboard", 
+            "target": null
+        }, 
+        {
+            "asset": "icon.png", 
+            "target": "icon.png"
+        }, 
+        {
+            "asset": "AsUBus 0.2/Default@2x.png", 
+            "target": "Default@2x.png"
+        }, 
+        {
+            "asset": "icon@2x.png", 
+            "target": "icon@2x.png"
+        }, 
+        {
+            "asset": "AsUBus 0.2/Stops.plist", 
+            "target": "Stops.plist"
+        }, 
+        {
+            "asset": "AsUBus 0.2/asUbus header2-01.png", 
+            "target": "asUbus header2-01.png"
+        }, 
+        {
+            "asset": "AsUBus 0.2/busAnnotRed.png", 
+            "target": "busAnnotRed.png"
+        }, 
+        {
+            "asset": "AsUBus 0.2/busAnnotBlue.png", 
+            "target": "busAnnotBlue.png"
+        }, 
+        {
+            "asset": "AsUBus 0.2/busAnnotGold.png", 
+            "target": "busAnnotGold.png"
+        }, 
+        {
+            "asset": "AsUBus 0.2/Default-568h@2x.png", 
+            "target": "Default-568h@2x.png"
+        }, 
+        {
+            "asset": "AsUBus 0.2/icon@120.png", 
+            "target": "icon@120.png"
+        }, 
+        {
+            "asset": "AsUBus 0.2/busAnnotGreen.png", 
+            "target": "busAnnotGreen.png"
+        }, 
+        {
+            "asset": "AsUBus 0.2/busAnnotOrange.png", 
+            "target": "busAnnotOrange.png"
+        }, 
+        {
+            "asset": "AsUBus 0.2/busAnnotPink.png", 
+            "target": "busAnnotPink.png"
+        }, 
+        {
+            "asset": "AsUBus 0.2/busAnnotPurple.png", 
+            "target": "busAnnotPurple.png"
+        }, 
+        {
+            "asset": "AsUBus 0.2/busAnnotStock.png", 
+            "target": "busAnnotStock.png"
+        }, 
+        {
+            "asset": "AsUBus 0.2/blueButton.png", 
+            "target": "blueButton.png"
+        }, 
+        {
+            "asset": "AsUBus 0.2/whiteButton.png", 
+            "target": "whiteButton.png"
+        }, 
+        {
+            "asset": "AsUBus 0.2/asUbus header no space.png", 
+            "target": "asUbus header no space.png"
+        }, 
+        {
+            "asset": "AsUBus 0.2/MainScreen.png", 
+            "target": "MainScreen.png"
+        }, 
+        {
+            "asset": "AsUBus 0.2/underPageBackground.png", 
+            "target": "underPageBackground.png"
+        }, 
+        {
+            "asset": "AsUBus 0.2/FavoriteList.plist", 
+            "target": "FavoriteList.plist"
+        }, 
+        {
+            "asset": "AsUBus 0.2/busAnnotSilver.png", 
+            "target": "busAnnotSilver.png"
+        }, 
+        {
+            "asset": "AsUBus 0.2/iOS6_background.png", 
+            "target": "iOS6_background.png"
+        }, 
+        {
+            "asset": "AsUBus 0.2/stockbanner.png", 
+            "target": "stockbanner.png"
+        }, 
+        {
+            "asset": "AsUBus 0.2/Default.png", 
+            "target": "Default.png"
+        }, 
+        {
+            "asset": "AsUBus 0.2/busAnnotTeal.png", 
+            "target": "busAnnotTeal.png"
+        }
+    ], 
+    "config": {
+        "APPLICATION_FULL_NAME": "AsUBus 0.2", 
+        "APPLICATION_IDENTIFIER": "com.clee.asubus", 
+        "APPLICATION_NAME": "AsUBus0_2", 
+        "LONG_VERSION": "1.39", 
+        "SHORT_VERSION": "1.39", 
+        "TEMPLATE_VALUES": {
+            "EXECUTABLE_NAME": "AsUBus 0.2", 
+            "PRODUCT_NAME": "AsUBus 0.2"
+        }
+    }, 
+    "defines": {
+        "NS_BLOCK_ASSERTIONS": 1, 
+        "__IPHONE_OS_VERSION_MIN_REQUIRED": 50100
+    }, 
+    "deps": [
+        "UIKit", 
+        "MessageUI", 
+        "MapKit", 
+        "CoreLocation", 
+        "UIKit", 
+        "Foundation", 
+        "CoreGraphics"
+    ], 
+    "flags": [
+        "-DNS_BLOCK_ASSERTIONS=1", 
+        "-fobjc-arc", 
+        "-fasm-blocks", 
+        {
+            "flag": "-std=gnu99", 
+            "not_type": "c++"
+        }, 
+        {
+            "flag": "-fgnu-keywords", 
+            "not_type": "c++"
+        }, 
+        "-fno-asm", 
+        "-fpascal-strings", 
+        "-Wempty-body", 
+        "-Wshorten-64-to-32", 
+        "-Wno-deprecated-declarations", 
+        "-Wreturn-type", 
+        "-Wswitch", 
+        "-Wparentheses", 
+        "-Wformat", 
+        "-Wuninitialized", 
+        "-Wunused-function", 
+        "-Wunused-value", 
+        "-Wunused-variable", 
+        {
+            "flag": "-Winvalid-offsetof", 
+            "type": "c++"
+        }, 
+        {
+            "flag": "-Wprotocol", 
+            "type": "objc"
+        }, 
+        {
+            "flag": "-Wundeclared-selector", 
+            "type": "objc"
+        }
+    ], 
+    "header_paths": [
+        {
+            "header_path": "AsUBus 0.2-generated-files.hmap", 
+            "hmap": {}, 
+            "type": "iquote"
+        }, 
+        {
+            "header_path": "AsUBus 0.2-own-target-headers.hmap", 
+            "hmap": {}, 
+            "type": "I"
+        }, 
+        {
+            "header_path": "AsUBus 0.2-all-target-headers.hmap", 
+            "hmap": {}, 
+            "type": "I"
+        }, 
+        {
+            "header_path": "AsUBus 0.2-project-headers.hmap", 
+            "hmap": {
+                "AsUBus 0.2-Prefix.pch": {
+                    "key": "AsUBus 0.2-Prefix.pch", 
+                    "prefix": "AsUBus 0.2/", 
+                    "suffix": "AsUBus 0.2-Prefix.pch"
+                }, 
+                "BPCAboutViewController.h": {
+                    "key": "BPCAboutViewController.h", 
+                    "prefix": "AsUBus 0.2/", 
+                    "suffix": "BPCAboutViewController.h"
+                }, 
+                "BPCAd.h": {
+                    "key": "BPCAd.h", 
+                    "prefix": "AsUBus 0.2/", 
+                    "suffix": "BPCAd.h"
+                }, 
+                "BPCAppDelegate.h": {
+                    "key": "BPCAppDelegate.h", 
+                    "prefix": "AsUBus 0.2/", 
+                    "suffix": "BPCAppDelegate.h"
+                }, 
+                "BPCDetailViewController.h": {
+                    "key": "BPCDetailViewController.h", 
+                    "prefix": "AsUBus 0.2/", 
+                    "suffix": "BPCDetailViewController.h"
+                }, 
+                "BPCFavorite.h": {
+                    "key": "BPCFavorite.h", 
+                    "prefix": "AsUBus 0.2/", 
+                    "suffix": "BPCFavorite.h"
+                }, 
+                "BPCFavoritesViewController.h": {
+                    "key": "BPCFavoritesViewController.h", 
+                    "prefix": "AsUBus 0.2/", 
+                    "suffix": "BPCFavoritesViewController.h"
+                }, 
+                "BPCHoursViewController.h": {
+                    "key": "BPCHoursViewController.h", 
+                    "prefix": "AsUBus 0.2/", 
+                    "suffix": "BPCHoursViewController.h"
+                }, 
+                "BPCMapAnnotation.h": {
+                    "key": "BPCMapAnnotation.h", 
+                    "prefix": "AsUBus 0.2/", 
+                    "suffix": "BPCMapAnnotation.h"
+                }, 
+                "BPCMapViewController.h": {
+                    "key": "BPCMapViewController.h", 
+                    "prefix": "AsUBus 0.2/", 
+                    "suffix": "BPCMapViewController.h"
+                }, 
+                "BPCReportViewController.h": {
+                    "key": "BPCReportViewController.h", 
+                    "prefix": "AsUBus 0.2/", 
+                    "suffix": "BPCReportViewController.h"
+                }, 
+                "BPCReportViewControllerTime.h": {
+                    "key": "BPCReportViewControllerTime.h", 
+                    "prefix": "AsUBus 0.2/", 
+                    "suffix": "BPCReportViewControllerTime.h"
+                }, 
+                "BPCRouteViewController.h": {
+                    "key": "BPCRouteViewController.h", 
+                    "prefix": "AsUBus 0.2/", 
+                    "suffix": "BPCRouteViewController.h"
+                }, 
+                "BPCTempChangesViewController.h": {
+                    "key": "BPCTempChangesViewController.h", 
+                    "prefix": "AsUBus 0.2/", 
+                    "suffix": "BPCTempChangesViewController.h"
+                }, 
+                "BPCTwitterWebViewController.h": {
+                    "key": "BPCTwitterWebViewController.h", 
+                    "prefix": "AsUBus 0.2/", 
+                    "suffix": "BPCTwitterWebViewController.h"
+                }, 
+                "BPCViewController.h": {
+                    "key": "BPCViewController.h", 
+                    "prefix": "AsUBus 0.2/", 
+                    "suffix": "BPCViewController.h"
+                }
+            }, 
+            "type": "iquote"
+        }
+    ], 
+    "infoplists": [
+        "./AsUBus 0.2/AsUBus 0.2-Info.plist"
+    ], 
+    "libs": [], 
+    "modules": [], 
+    "pchs": [
+        "./AsUBus 0.2/AsUBus 0.2-Prefix.pch"
+    ], 
+    "sources": [
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "AsUBus 0.2/BPCAboutViewController.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "AsUBus 0.2/BPCAd.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "AsUBus 0.2/BPCAppDelegate.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "AsUBus 0.2/BPCDetailViewController.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "AsUBus 0.2/BPCFavorite.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "AsUBus 0.2/BPCFavoritesViewController.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "AsUBus 0.2/BPCHoursViewController.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "AsUBus 0.2/BPCMapAnnotation.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "AsUBus 0.2/BPCMapViewController.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "AsUBus 0.2/BPCReportViewController.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "AsUBus 0.2/BPCReportViewControllerTime.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "AsUBus 0.2/BPCRouteViewController.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "AsUBus 0.2/BPCTempChangesViewController.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "AsUBus 0.2/BPCTwitterWebViewController.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "AsUBus 0.2/BPCViewController.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "AsUBus 0.2/main.m"
+        }
+    ], 
+    "type": "app", 
+    "version": "1", 
+    "xcode_project": "AsUBus 0.2.xcodeproj"
+}
