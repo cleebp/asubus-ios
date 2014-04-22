@@ -24,5 +24,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *background_4inch;
 @property (weak, nonatomic) IBOutlet UIImageView *background_3inch;
 
+//ad data
 @property (strong, nonatomic) NSMutableArray *adItems;
+@property (strong, nonatomic) NSMutableArray *json;
+@property (strong, nonatomic) NSTimer *timer;
 @end

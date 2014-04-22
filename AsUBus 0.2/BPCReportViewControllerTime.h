@@ -21,6 +21,8 @@
 @property (weak, nonatomic) id delegate;
 
 @property (strong, nonatomic) NSMutableArray *adItems;
+@property (strong, nonatomic) NSMutableArray *json;
+@property (strong, nonatomic) NSTimer *timer;
 
 - (IBAction)mailButtonPressed:(id)sender;
 

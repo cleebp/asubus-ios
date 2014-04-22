@@ -535,7 +535,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AsUBus 0.2/AsUBus 0.2-Prefix.pch";
 				INFOPLIST_FILE = "AsUBus 0.2/AsUBus 0.2-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/Brian/Documents/ASU/Summer\\ 2012/iPhone\\ Dev/Final\\ Project/AsUBus\\ 0.2/AsUBus\\ 0.2/AsUBus\\ 0.2",
@@ -552,7 +552,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AsUBus 0.2/AsUBus 0.2-Prefix.pch";
 				INFOPLIST_FILE = "AsUBus 0.2/AsUBus 0.2-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/Brian/Documents/ASU/Summer\\ 2012/iPhone\\ Dev/Final\\ Project/AsUBus\\ 0.2/AsUBus\\ 0.2/AsUBus\\ 0.2",

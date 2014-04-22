@@ -12,4 +12,6 @@
 @interface BPCAboutViewController : GAITrackedViewController
 
 @property (strong, nonatomic) NSMutableArray *adItems;
+@property (strong, nonatomic) NSMutableArray *json;
+@property (strong, nonatomic) NSTimer *timer;
 @end

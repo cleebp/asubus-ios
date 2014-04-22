@@ -21,6 +21,9 @@
 
 @implementation BPCDetailViewController
 @synthesize adItems;
+@synthesize json;
+@synthesize timer1;
+@synthesize timer2;
 //Seg info
 @synthesize selection;
 @synthesize delegate;
@@ -64,6 +67,7 @@
 
 - (void)initializeComponents:(NSTimer*)theTimer
 {
+    NSLog(@"initializing ish");
     NSDate *now = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit | NSWeekdayCalendarUnit) fromDate:now];
@@ -150,18 +154,6 @@
     self.screenName = @"Detail";
 	// Do any additional setup after loading the view.
     
-    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
-    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
-    if (networkStatus == NotReachable)
-    {
-        NSLog(@"There IS NO internet connection");
-    }
-    else
-    {
-        NSLog(@"There IS internet connection");
-        [self initAds];
-    }
-    
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"underPageBackground.png"]];
     
     route = [selection objectForKey:@"route"];
@@ -183,18 +175,36 @@
     [favoritesButton setBackgroundImage:stretchableButtonImagePressed
                             forState:UIControlStateHighlighted];
     
-    NSTimer* timer = [NSTimer timerWithTimeInterval:10.0f target:self selector:@selector(initializeComponents:) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+    timer1 = [NSTimer timerWithTimeInterval:10.0f target:self selector:@selector(initializeComponents:) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:timer1 forMode:NSRunLoopCommonModes];
+    timer2 = [NSTimer timerWithTimeInterval:10.0f target:self selector:@selector(initAds:) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:timer2 forMode:NSRunLoopCommonModes];
     
     [self initializeScheduleView];
     [scheduleView flashScrollIndicators];
-    [self initializeComponents:(NSTimer*)timer];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-
+    [self initializeComponents:(NSTimer*)timer1];
+    
+    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
+    if (networkStatus == NotReachable)
+    {
+        NSLog(@"There IS NO internet connection");
+    }
+    else
+    {
+        NSLog(@"There IS internet connection");
+        //ad data
+        NSURL *url = [NSURL URLWithString:@"http://asubus.com/ads/adlist.json"];
+        NSData * urlData = [NSData dataWithContentsOfURL:url];
+        
+        NSError * localError;
+        json = [NSJSONSerialization JSONObjectWithData:urlData options:0 error:&localError];
+        
+        adItems = [NSMutableArray arrayWithCapacity:999];
+        
+        if(!localError)
+            [self initAds:timer2];
+    }
 }
 
 - (void)checkMilitary
@@ -867,67 +877,59 @@
     [alert show];
 }
 
-- (void)initAds
+- (void)initAds:(NSTimer*)theOtherTimer
 {
-    //ad data
-    NSURL *url = [NSURL URLWithString:@"http://asubus.com/ads/adlist.json"];
-    NSData * urlData = [NSData dataWithContentsOfURL:url];
+    NSLog(@"\nloading a new ad... on detail\n");
     
-    NSError * localError;
-    NSArray *json = [NSJSONSerialization JSONObjectWithData:urlData options:0 error:&localError];
+    BPCAd * ad;
+    //populate ad object array
     
-    adItems = [NSMutableArray arrayWithCapacity:999];
-    
-    if (!localError)
+    for (NSDictionary *dic in json)
     {
-        BPCAd * ad;
-        //populate ad object array
+        ad = [[BPCAd alloc] init];
         
-        for (NSDictionary *dic in json)
+        //grab all keys
+        NSString * promo = (NSString*) [dic valueForKey:@"promo"];
+        NSString * image = (NSString*) [dic valueForKey:@"imageURL"];
+        NSString * link = (NSString*) [dic valueForKey:@"link"];
+        
+        NSURL *imageURL = [NSURL URLWithString:image];
+        NSURL *linkURL = [NSURL URLWithString:link];
+        
+        //handle if url is to open fbook app and app not installed
+        if (![[UIApplication sharedApplication] canOpenURL:linkURL])
         {
-            ad = [[BPCAd alloc] init];
-            
-            //grab all keys
-            NSString * promo = (NSString*) [dic valueForKey:@"promo"];
-            NSString * image = (NSString*) [dic valueForKey:@"imageURL"];
-            NSString * link = (NSString*) [dic valueForKey:@"link"];
-            NSURL *imageURL = [NSURL URLWithString:image];
-            NSURL *linkURL = [NSURL URLWithString:link];
-            
-            //create ad object and add to array
-            ad.promo = promo;
-            ad.imageURL = imageURL;
-            ad.linkURL = linkURL;
-            [adItems addObject: ad];
+            linkURL = [NSURL URLWithString:@"https://www.facebook.com/asubusapp?hc_location=timeline"];
         }
         
-        int index = arc4random() % [adItems count];
-        
-        BPCAd *testAd = [adItems objectAtIndex:index];
-        
-        CGRect imgFrame;
-        CGRect screenBounds = [[UIScreen mainScreen] bounds];
-        if (screenBounds.size.height == 568)
-        {
-            imgFrame = CGRectMake(0, 518, 320, 50);
-        }
-        else
-        {
-            imgFrame = CGRectMake(0, 430, 320, 50);
-        }
-        UIButton *adImage=[[UIButton alloc] initWithFrame:imgFrame];
-        NSData * imageData = [NSData dataWithContentsOfURL:testAd.imageURL];
-        UIImage * image = [UIImage imageWithData:imageData];
-        [adImage setBackgroundImage:image forState:UIControlStateNormal];
-        [adImage setTag:index];
-        [adImage addTarget:self action:@selector(adButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:adImage];
+        //create ad object and add to array
+        ad.promo = promo;
+        ad.imageURL = imageURL;
+        ad.linkURL = linkURL;
+        [adItems addObject: ad];
+    }
+    
+    int index = arc4random() % [adItems count];
+    BPCAd *testAd = [adItems objectAtIndex:index];
+    
+    CGRect imgFrame;
+    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    if (screenBounds.size.height == 568)
+    {
+        imgFrame = CGRectMake(0, 518, 320, 50);
     }
     else
     {
-        NSLog(@"CRASH AND BURN");
+        imgFrame = CGRectMake(0, 430, 320, 50);
     }
-    
+    UIButton *adImage=[[UIButton alloc] initWithFrame:imgFrame];
+    NSData * imageData = [NSData dataWithContentsOfURL:testAd.imageURL];
+    UIImage * image = [UIImage imageWithData:imageData];
+    adImage.layer.zPosition = 2;
+    [adImage setBackgroundImage:image forState:UIControlStateNormal];
+    [adImage setTag:index];
+    [adImage addTarget:self action:@selector(adButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:adImage];
 }
 
 - (void)adButtonPressed:(UIButton *)sender
@@ -952,6 +954,28 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    if (![timer1 isValid] || ![timer2 isValid])
+    {
+        [self viewDidLoad];
+    }
+    [super viewWillAppear:animated];
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    if ([timer1 isValid] || [timer2 isValid])
+    {
+        NSLog(@"invalidating detail timers...");
+        [timer1 invalidate];
+        [timer2 invalidate];
+        timer1 = nil;
+        timer2 = nil;
+    }
+    [super viewWillDisappear:animated];
 }
 
 @end

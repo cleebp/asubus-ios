@@ -23,6 +23,9 @@
 
 
 @property (strong, nonatomic) NSMutableArray *adItems;
+@property (strong, nonatomic) NSMutableArray *json;
+@property (strong, nonatomic) NSTimer *timer1;
+@property (strong, nonatomic) NSTimer *timer2;
 
 @property (copy, nonatomic) NSDictionary *selection;
 @property (copy, nonatomic) NSDictionary *stopInformation;
