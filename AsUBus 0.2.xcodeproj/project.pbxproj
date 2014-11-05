@@ -50,7 +50,6 @@
 		D3AE8E3F159143D9000DF04F /* asUbus header2-01.png in Resources */ = {isa = PBXBuildFile; fileRef = D3AE8E3E159143D9000DF04F /* asUbus header2-01.png */; };
 		D3AE8E4115914441000DF04F /* busAnnotRed.png in Resources */ = {isa = PBXBuildFile; fileRef = D3AE8E4015914441000DF04F /* busAnnotRed.png */; };
 		D3AE8E45159152B3000DF04F /* BPCDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3AE8E44159152B3000DF04F /* BPCDetailViewController.m */; };
-		D3D96A1B18E751C9009F96EA /* BPCDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = D3D96A1A18E751C9009F96EA /* BPCDatabase.m */; };
 		D3DEC36E15D621F2002BAFE2 /* underPageBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DEC36D15D621F2002BAFE2 /* underPageBackground.png */; };
 		D3DEC37115D62413002BAFE2 /* BPCAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DEC37015D62413002BAFE2 /* BPCAboutViewController.m */; };
 		D3DEC37415D76009002BAFE2 /* BPCHoursViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DEC37315D76009002BAFE2 /* BPCHoursViewController.m */; };
@@ -130,8 +129,6 @@
 		D3AE8E43159152B3000DF04F /* BPCDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCDetailViewController.h; sourceTree = "<group>"; };
 		D3AE8E44159152B3000DF04F /* BPCDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCDetailViewController.m; sourceTree = "<group>"; };
 		D3D96A1818E74D1D009F96EA /* asubus.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = asubus.db; sourceTree = "<group>"; };
-		D3D96A1918E751BB009F96EA /* BPCDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCDatabase.h; sourceTree = "<group>"; };
-		D3D96A1A18E751C9009F96EA /* BPCDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCDatabase.m; sourceTree = "<group>"; };
 		D3DEC36D15D621F2002BAFE2 /* underPageBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = underPageBackground.png; sourceTree = "<group>"; };
 		D3DEC36F15D62413002BAFE2 /* BPCAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCAboutViewController.h; sourceTree = "<group>"; };
 		D3DEC37015D62413002BAFE2 /* BPCAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCAboutViewController.m; sourceTree = "<group>"; };
@@ -242,8 +239,6 @@
 				D3DEC37315D76009002BAFE2 /* BPCHoursViewController.m */,
 				D33B21EC15E18AF000BC4EEB /* BPCTempChangesViewController.h */,
 				D33B21ED15E18AF000BC4EEB /* BPCTempChangesViewController.m */,
-				D3D96A1918E751BB009F96EA /* BPCDatabase.h */,
-				D3D96A1A18E751C9009F96EA /* BPCDatabase.m */,
 				D310D8F0158E69C500CBB844 /* Supporting Files */,
 			);
 			path = "AsUBus 0.2";
@@ -357,6 +352,11 @@
 			attributes = {
 				CLASSPREFIX = BPC;
 				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					D310D8E4158E69C500CBB844 = {
+						DevelopmentTeam = USLA42BS3J;
+					};
+				};
 			};
 			buildConfigurationList = D310D8DF158E69C500CBB844 /* Build configuration list for PBXProject "AsUBus 0.2" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -434,7 +434,6 @@
 				D33B21EE15E18AF000BC4EEB /* BPCTempChangesViewController.m in Sources */,
 				D3403EBC1630DC2C008C7506 /* BPCReportViewControllerTime.m in Sources */,
 				D3F4231E17065B8D008FA1F8 /* BPCTwitterWebViewController.m in Sources */,
-				D3D96A1B18E751C9009F96EA /* BPCDatabase.m in Sources */,
 				D322E89318CE536100103A27 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,6 +531,8 @@
 		D310D904158E69C500CBB844 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AsUBus 0.2/AsUBus 0.2-Prefix.pch";
 				INFOPLIST_FILE = "AsUBus 0.2/AsUBus 0.2-Info.plist";
@@ -541,6 +542,7 @@
 					"/Users/Brian/Documents/ASU/Summer\\ 2012/iPhone\\ Dev/Final\\ Project/AsUBus\\ 0.2/AsUBus\\ 0.2/AsUBus\\ 0.2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -549,6 +551,8 @@
 		D310D905158E69C500CBB844 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AsUBus 0.2/AsUBus 0.2-Prefix.pch";
 				INFOPLIST_FILE = "AsUBus 0.2/AsUBus 0.2-Info.plist";
@@ -558,6 +562,7 @@
 					"/Users/Brian/Documents/ASU/Summer\\ 2012/iPhone\\ Dev/Final\\ Project/AsUBus\\ 0.2/AsUBus\\ 0.2/AsUBus\\ 0.2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

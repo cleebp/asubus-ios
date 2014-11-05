@@ -1,14 +1,19 @@
+//BPCDetailViewController.m
+//Copyright (C) 2014  Brian Clee (cleebp AT gmail DOT com)
 //
-//  BPCDetailViewController.m
-//  AsUBus 0.2
+//This program is free software; you can redistribute it and/or modify
+//it under the terms of the GNU General Public License as published by
+//the Free Software Foundation; either version 2 of the License, or
+//(at your option) any later version.
 //
-//  Created by Brian Clee on 6/19/12.
-//  Copyright (c) 2012 __asUbus__. All rights reserved.
+//This program is distributed in the hope that it will be useful,
+//but WITHOUT ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
 //
-//  <author>Brian Clee</author>
-//  <email>bpclee2011@gmail.com</email>
-//  <date>2012-06-24</date>
-//
+//You should have received a copy of the GNU General Public License along
+//with this program; if not, write to the Free Software Foundation, Inc.,
+//51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 #import "BPCDetailViewController.h"
 #import "BPCAd.h"
@@ -121,7 +126,7 @@
                 
                 [self threeBusSetup];
             }
-            else if ([route isEqualToString:@"Orange Route"] || [route isEqualToString:@"Purple Route"])
+            else if ([route isEqualToString:@"Orange Route"] || [route isEqualToString:@"Teal Route"] || [route isEqualToString:@"Purple Route"])
             {
                 //time1 is bus1stop1 and time2 is bus1stop2 etc.
                 time1String = [stopInformation objectForKey:@"bus1departs1"];
@@ -629,6 +634,11 @@
             [self twoStopLoad];
         }
     }
+    else if ([route isEqualToString:@"Teal Route"])
+    {
+        //schedule is unclear but it seems two busses always run when teal runs
+        [self twoBusTwoStopLoad];
+    }
     else //Orange route
     {
         //It is monday-friday
@@ -729,7 +739,7 @@
     }
     else if ([route isEqualToString:@"Teal Route"])
     {
-        scheduleView.text = [NSString stringWithFormat:@"Monday-Friday (Fall and Spring Semesters): 7:18 AM to 10:06 PM.\nMonday-Friday (Summer): 7:00 AM to 6:36 PM.\nSaturdays: 9:18 AM to 5:06 PM."];
+        scheduleView.text = [NSString stringWithFormat:@"Monday-Friday (Fall and Spring Semesters): 7:18 AM to 10:06 PM.\nMonday-Friday (Summer): 7:18 AM to 6:36 PM.\nSaturdays: 9:18 AM to 5:06 PM."];
     }
     else
     {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Th0-fV-wpG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Th0-fV-wpG">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -11,7 +11,6 @@
                 <navigationController definesPresentationContext="YES" id="Th0-fV-wpG" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="jvp-4i-7kM">
-                        <rect key="frame" x="0.0" y="-44" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -124,7 +123,7 @@
             </objects>
             <point key="canvasLocation" x="396" y="125"/>
         </scene>
-        <!--About View Controller - About-->
+        <!--About-->
         <scene sceneID="eax-Ay-h2j">
             <objects>
                 <viewController id="B51-Rb-LtZ" customClass="BPCAboutViewController" sceneMemberID="viewController">
@@ -132,7 +131,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Version 1.45" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="s7O-j0-Wly">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Version 1.5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="s7O-j0-Wly">
                                 <rect key="frame" x="195" y="149" width="101" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -179,7 +178,7 @@
             </objects>
             <point key="canvasLocation" x="960" y="2047"/>
         </scene>
-        <!--Twitter Web View Controller - News-->
+        <!--News-->
         <scene sceneID="wAA-zu-EUr">
             <objects>
                 <viewController id="jO4-w2-cY6" customClass="BPCTwitterWebViewController" sceneMemberID="viewController">
@@ -206,7 +205,7 @@
             </objects>
             <point key="canvasLocation" x="960" y="1391"/>
         </scene>
-        <!--Favorites View Controller - Favorite Routes-->
+        <!--Favorite Routes-->
         <scene sceneID="feQ-qM-Lh2">
             <objects>
                 <tableViewController id="UmS-IA-Rdk" customClass="BPCFavoritesViewController" sceneMemberID="viewController">
@@ -257,7 +256,7 @@
             </objects>
             <point key="canvasLocation" x="950" y="118"/>
         </scene>
-        <!--Report View Controller - Report a Problem-->
+        <!--Report a Problem-->
         <scene sceneID="s8a-Bs-eyu">
             <objects>
                 <viewController id="xUZ-NF-Ffk" customClass="BPCReportViewController" sceneMemberID="viewController">
@@ -304,7 +303,7 @@
             </objects>
             <point key="canvasLocation" x="960" y="751"/>
         </scene>
-        <!--Report View Controller Time - Report a Problem-->
+        <!--Report a Problem-->
         <scene sceneID="VmV-FH-bEF">
             <objects>
                 <viewController id="4wf-mx-SG8" customClass="BPCReportViewControllerTime" sceneMemberID="viewController">
@@ -324,27 +323,6 @@
                                 <date key="date" timeIntervalSinceReferenceDate="372300932.93488401">
                                     <!--2012-10-19 00:55:32 +0000-->
                                 </date>
-                                <timeZone key="timeZone" name="America/Los_Angeles">
-                                    <data key="data">
-VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
-y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
-5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
-8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
-AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
-DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
-HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
-KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
-OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
-Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
-VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
-Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
-cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
-f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
-AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
-AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
-AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
-</data>
-                                </timeZone>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bot-qd-wVH">
                                 <rect key="frame" x="103" y="380" width="114" height="44"/>
@@ -610,7 +588,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="1487" y="118"/>
         </scene>
-        <!--Route View Controller - All Routes-->
+        <!--All Routes-->
         <scene sceneID="9UT-TI-fry">
             <objects>
                 <tableViewController id="bpx-NR-LsN" customClass="BPCRouteViewController" sceneMemberID="viewController">

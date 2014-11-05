@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9D625607-E2E6-457A-AF63-2989E02DC74A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AsUBus 0.2</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EEC75AD38E92C7541D6B5D840DE1CD7B99A4D527</key>
+		<string>ssh://github.com/asubus/asubus-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>AsUBus 0.2.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EEC75AD38E92C7541D6B5D840DE1CD7B99A4D527</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/asubus/asubus-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EEC75AD38E92C7541D6B5D840DE1CD7B99A4D527</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EEC75AD38E92C7541D6B5D840DE1CD7B99A4D527</string>
+			<key>IDESourceControlWCCName</key>
+			<string>asubus-ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>
